@@ -1,5 +1,7 @@
+require "timeout"
 require "xmpp4r"
 require "xmpp4r/muc/helper/simplemucclient"
+require "xmpp4r/roster/helper/roster"
 
 module Ellen
   module Adapters
@@ -78,7 +80,7 @@ module Ellen
 
       def bind
         room.on_message do |time, nickname, body|
-          robot.receive(body: body, source: nickname, command: body.start_with?(mention_name))
+          robot.receive(body: body, source: nickname, command: body.start_with?(prefixed_mention_name))
         end
       end
 
@@ -94,10 +96,23 @@ module Ellen
         Jabber::Presence.new.set_type(:available)
       end
 
+      def prefixed_mention_name
+        "@#{mention_name}"
+      end
+
       def mention_name
-        "@#{nickname.split(" ").first}"
+        Timeout.timeout(3) { roster[jid].attributes["mention_name"] }
+      rescue Timeout::Error
+        nickname.split(" ").first
       end
       memoize :mention_name
+
+      def roster
+        roster = Jabber::Roster::Helper.new(client, false)
+        roster.get_roster
+        roster.wait_for_roster
+        roster
+      end
     end
   end
 end
