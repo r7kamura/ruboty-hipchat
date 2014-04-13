@@ -47,7 +47,9 @@ module Ellen
       private
 
       def jid
-        ENV["HIPCHAT_JID"]
+        jid = Jabber::JID.new(ENV["HIPCHAT_JID"])
+        jid.resource = "bot"
+        jid
       end
 
       def password
