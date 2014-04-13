@@ -10,7 +10,7 @@ module Ellen
 
       env :HIPCHAT_DEBUG, "Pass `1` to show debug information on stdout (optional)", optional: true
       env :HIPCHAT_JID, "Account's JID (e.g. 12345_67890@chat.hipchat.com)"
-      env :HIPCHAT_NICKNAME, "Account's nickname (e.g. Ellen)"
+      env :HIPCHAT_NICKNAME, "Account's nickname, which must match the name on the HipChat account (e.g. Ellen)"
       env :HIPCHAT_PASSWORD, "Account's password (e.g. xxx)"
       env :HIPCHAT_ROOM_ID, "Room ID the robot first logs in (e.g. 12345_room-name@conf.hipchat.com)"
 
