@@ -8,16 +8,6 @@ module Ellen
     class Hipchat < Base
       include Mem
 
-      EVENT_NAMES = [
-        :join,
-        :leave,
-        :message,
-        :private_message,
-        :room_message,
-        :self_leave,
-        :subject,
-      ]
-
       def run
         log
         debug
