@@ -1,5 +1,5 @@
 # Ellen::Hipchat
-Hipchat adapter for Ellen.
+Hipchat adapter for [Ellen](https://github.com/r7kamura/ellen).
 
 ## Usage
 ```ruby
