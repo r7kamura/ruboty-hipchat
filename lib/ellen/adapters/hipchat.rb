@@ -8,6 +8,12 @@ module Ellen
     class Hipchat < Base
       include Mem
 
+      env :HIPCHAT_DEBUG, "Pass `1` to show debug information on stdout (optional)", optional: true
+      env :HIPCHAT_JID, "Account's JID (e.g. 12345_67890@chat.hipchat.com)"
+      env :HIPCHAT_NICKNAME, "Account's nickname (e.g. Ellen)"
+      env :HIPCHAT_PASSWORD, "Account's password (e.g. xxx)"
+      env :HIPCHAT_ROOM_ID, "Room ID the robot first logs in (e.g. 12345_room-name@conf.hipchat.com)"
+
       def run
         log
         debug
@@ -41,19 +47,19 @@ module Ellen
       private
 
       def jid
-        ENV["HIPCHAT_JID"] or Ellen.die("HIPCHAT_JID is missing")
+        ENV["HIPCHAT_JID"]
       end
 
       def password
-        ENV["HIPCHAT_PASSWORD"] or Ellen.die("HIPCHAT_PASSWORD is missing")
+        ENV["HIPCHAT_PASSWORD"]
       end
 
       def room_id
-        ENV["HIPCHAT_ROOM_ID"] or Ellen.die("HIPCHAT_ROOM_ID is missing")
+        ENV["HIPCHAT_ROOM_ID"]
       end
 
       def nickname
-        ENV["HIPCHAT_NICKNAME"] or Ellen.die("HIPCHAT_NICKNAME is missing")
+        ENV["HIPCHAT_NICKNAME"]
       end
 
       def room_key
