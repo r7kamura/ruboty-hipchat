@@ -25,8 +25,9 @@ module Ellen
         exit
       end
 
-      def say(body, options = {})
-        room.say(body)
+      # TODO: We should use message[:from] & message[:to] to select correct room
+      def say(message)
+        room.say(message[:body])
       end
 
       private
@@ -78,7 +79,7 @@ module Ellen
 
       def bind
         room.on_message do |time, nickname, body|
-          robot.receive(body: body, source: nickname, command: body.start_with?(prefixed_mention_name))
+          robot.receive(body: body, from: nickname, to: room_id)
         end
       end
 
