@@ -1,3 +1,6 @@
+## 0.1.0
+* Change XMPP library: xmpp4r -> xrc
+
 ## 0.0.4
 * Support Ellen v0.2.0
 
