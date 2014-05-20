@@ -1,3 +1,6 @@
+## 0.1.1
+* Support Ellen::Message#from_name
+
 ## 0.1.0
 * Change XMPP library: xmpp4r -> xrc
 
