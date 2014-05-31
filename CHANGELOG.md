@@ -1,11 +1,11 @@
 ## 0.1.1
-* Support Ellen::Message#from_name
+* Support Ruboty::Message#from_name
 
 ## 0.1.0
 * Change XMPP library: xmpp4r -> xrc
 
 ## 0.0.4
-* Support Ellen v0.2.0
+* Support Ruboty v0.2.0
 
 ## 0.0.3
 * Set JID optional resource as "bot" to disable receiving chat-history :v:

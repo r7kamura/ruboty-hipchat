@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in ellen-hipchat.gemspec
+# Specify your gem's dependencies in ruboty-hipchat.gemspec
 gemspec

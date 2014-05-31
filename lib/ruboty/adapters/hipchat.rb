@@ -1,14 +1,14 @@
 require "xrc"
 
-module Ellen
+module Ruboty
   module Adapters
     class Hipchat < Base
       include Mem
 
       env :HIPCHAT_JID, "Account's JID (e.g. 12345_67890@chat.hipchat.com)"
-      env :HIPCHAT_NICKNAME, "Account's nickname, which must match the name on the HipChat account (e.g. ellen)"
+      env :HIPCHAT_NICKNAME, "Account's nickname, which must match the name on the HipChat account (e.g. ruboty)"
       env :HIPCHAT_PASSWORD, "Account's password (e.g. xxx)"
-      env :HIPCHAT_ROOM_NAME, "Room name ellen first logs in (e.g. 12345_myroom)"
+      env :HIPCHAT_ROOM_NAME, "Room name ruboty first logs in (e.g. 12345_myroom)"
 
       def run
         bind
