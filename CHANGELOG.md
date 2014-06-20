@@ -1,3 +1,6 @@
+## 0.1.3
+* Support comma-separated multi HIPCHAT_ROOM_NAME
+
 ## 0.1.2
 * Rename: Ellen -> Ruboty
 

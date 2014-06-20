@@ -8,7 +8,7 @@ module Ruboty
       env :HIPCHAT_JID, "Account's JID (e.g. 12345_67890@chat.hipchat.com)"
       env :HIPCHAT_NICKNAME, "Account's nickname, which must match the name on the HipChat account (e.g. ruboty)"
       env :HIPCHAT_PASSWORD, "Account's password (e.g. xxx)"
-      env :HIPCHAT_ROOM_NAME, "Room name ruboty first logs in (e.g. 12345_myroom)"
+      env :HIPCHAT_ROOM_NAME, "Room name ruboty first logs in (e.g. 12345_room_a,12345_room_b)"
 
       def run
         bind
@@ -33,7 +33,7 @@ module Ruboty
           jid: jid,
           nickname: nickname,
           password: password,
-          room_jid: room_jid,
+          room_jid: room_jids.join(","),
         )
       end
 
@@ -45,12 +45,14 @@ module Ruboty
         jid.to_s
       end
 
-      def room_jid
-        "#{room_name}@conf.hipchat.com"
+      def room_jids
+        room_names.map do |room_name|
+          "#{room_name}@conf.hipchat.com"
+        end
       end
 
-      def room_name
-        ENV["HIPCHAT_ROOM_NAME"]
+      def room_names
+        ENV["HIPCHAT_ROOM_NAME"].split(",")
       end
 
       def password
