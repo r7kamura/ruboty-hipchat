@@ -66,6 +66,7 @@ module Ruboty
       def bind
         client.on_private_message(&method(:on_message))
         client.on_room_message(&method(:on_message))
+        client.on_invite(&method(:on_invite))
       end
 
       def connect
@@ -80,6 +81,10 @@ module Ruboty
           to: message.to,
           type: message.type,
         )
+      end
+
+      def on_invite(message)
+        client.join(message.from)
       end
 
       def username_of(message)

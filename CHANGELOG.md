@@ -1,3 +1,6 @@
+## 0.1.4
+* Auto-join for any invitation message
+
 ## 0.1.3
 * Support comma-separated multi HIPCHAT_ROOM_NAME
 
