@@ -1,3 +1,6 @@
+## 0.1.5
+* Fix xrc version dependency
+
 ## 0.1.4
 * Auto-join for any invitation message
 
