@@ -1,3 +1,6 @@
+## 0.1.6
+* Fix HIPCHAT_ROOM_NAME encoding problem
+
 ## 0.1.5
 * Fix xrc version dependency
 
