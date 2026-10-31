@@ -2,6 +2,7 @@
 
 > [!NOTE]
 > HipChat service has ended, so this plugin is archived.
+
 Hipchat adapter for [Ruboty](https://github.com/r7kamura/ruboty).
 
 ## Usage
